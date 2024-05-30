@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Content</title>
+    <style>
+        #personalized-image {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Personalized Image</h1>
+    <img id="personalized-image" src="" alt="Personalized Image">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageUrl = urlParams.get('imageUrl');
+        if (imageUrl) {
+            document.getElementById('personalized-image').src = imageUrl;
+            document.getElementById('personalized-image').style.display = 'block';
+        } else {
+            document.write('No image URL provided.');
+        }
+    </script>
+</body>
+</html>
